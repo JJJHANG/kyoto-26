@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>古都漫步 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+              serif: ['"Zen Old Mincho"', 'serif'],
+            },
+            colors: {
+              kyoto: {
+                base: '#F4F4F0',       // 胡粉色 (Gofun) - Off-white background
+                paper: '#FDFBF7',      // 和紙色 (Washi) - Card background
+                ink: '#2B2B2B',        // 墨色 (Sumi) - Primary Text
+                matcha: '#7A8F68',     // 抹茶色 (Matcha) - Primary Accent / Sightseeing
+                sakura: '#D68C8C',     // 紅梅色 (Kobai) - Accent / Food
+                indigo: '#465D75',     // 藍鼠 (Ainezumi) - Transport
+                gold: '#BFA667',       // 金茶 (Kincha) - Stay / Highlights
+                wood: '#8A7159',       // 檜皮色 (Hiwada) - Borders/Lines
+                mist: '#A8AAB0',       // 銀鼠 (Ginnezumi) - Muted text
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(15px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F4F4F0;
+        color: #2B2B2B;
+        -webkit-tap-highlight-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238A7159' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      .kyoto-card {
+        background-color: #FDFBF7;
+        box-shadow: 0 2px 15px -3px rgba(43, 43, 43, 0.05);
+        border: 1px solid rgba(138, 113, 89, 0.15);
+      }
+      .dialog-backdrop {
+        background-color: rgba(43, 43, 43, 0.6);
+        backdrop-filter: blur(4px);
+      }
+      /* Smooth cubic-bezier for a graceful Japanese movement */
+      .slide-up-transition {
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
