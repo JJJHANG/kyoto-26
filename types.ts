@@ -41,7 +41,6 @@ export interface BookingDetail {
 export interface SpotCard {
   name: string;
   subtitle?: string;
-  mapQuery?: string;
   address?: string;
 }
 

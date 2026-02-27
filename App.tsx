@@ -12,8 +12,6 @@ import {
     Leaf,
     X,
     Star,
-    Navigation,
-    ExternalLink,
     Tag,
     Copy,
     Check,
@@ -21,6 +19,18 @@ import {
 } from "lucide-react";
 import { ITINERARY } from "./data";
 import { DailyPlan, Activity } from "./types";
+
+const optimizeImageUrl = (url: string): string => {
+    if (
+        url.includes("commons.wikimedia.org/wiki/Special:FilePath/") &&
+        !url.includes("width=")
+    ) {
+        const separator = url.includes("?") ? "&" : "?";
+        return `${url}${separator}width=1400`;
+    }
+
+    return url;
+};
 
 // --- Icons Helper ---
 const getActivityIcon = (type: string) => {
@@ -88,37 +98,6 @@ const ActivityBottomSheet: React.FC<{
 
     // Use the persistent state for rendering
     const content = displayActivity;
-
-    const handleOpenMap = () => {
-        if (content?.address) {
-            const query = encodeURIComponent(content.address);
-            window.open(
-                `https://www.google.com/maps/search/?api=1&query=${query}`,
-                "_blank",
-            );
-        } else if (content?.title) {
-            const query = encodeURIComponent(content.title);
-            window.open(
-                `https://www.google.com/maps/search/?api=1&query=${query}`,
-                "_blank",
-            );
-        }
-    };
-
-    const openMapByQuery = (queryText?: string) => {
-        if (!queryText) return;
-        const query = encodeURIComponent(queryText);
-        window.open(
-            `https://www.google.com/maps/search/?api=1&query=${query}`,
-            "_blank",
-        );
-    };
-
-    const handleOpenLink = () => {
-        if (content?.link) {
-            window.open(content.link, "_blank");
-        }
-    };
 
     return (
         <>
@@ -261,65 +240,25 @@ const ActivityBottomSheet: React.FC<{
                                 </h4>
                                 <div className="grid grid-cols-1 gap-3">
                                     {content.spotCards.map((spot, idx) => {
-                                        const mapTarget =
-                                            spot.address || spot.mapQuery;
                                         return (
-                                            <button
+                                            <div
                                                 key={`${spot.name}-${idx}`}
-                                                onClick={() =>
-                                                    openMapByQuery(mapTarget)
-                                                }
-                                                className="text-left p-4 rounded-xl border border-kyoto-wood/20 bg-white hover:bg-kyoto-paper transition-colors shadow-sm disabled:opacity-50"
-                                                disabled={!mapTarget}
+                                                className="text-left p-4 rounded-xl border border-kyoto-wood/20 bg-white shadow-sm"
                                             >
-                                                <div className="flex items-start justify-between gap-3">
-                                                    <div>
-                                                        <p className="text-base font-sans font-bold text-kyoto-ink">
-                                                            {spot.name}
-                                                        </p>
-                                                        {spot.subtitle && (
-                                                            <p className="text-sm text-kyoto-ink/70 mt-1">
-                                                                {spot.subtitle}
-                                                            </p>
-                                                        )}
-                                                    </div>
-                                                    <span className="inline-flex items-center gap-1 text-xs text-kyoto-indigo font-bold whitespace-nowrap">
-                                                        <Navigation className="w-3.5 h-3.5" />
-                                                        導航
-                                                    </span>
-                                                </div>
-                                            </button>
+                                                <p className="text-base font-sans font-bold text-kyoto-ink">
+                                                    {spot.name}
+                                                </p>
+                                                {spot.subtitle && (
+                                                    <p className="text-sm text-kyoto-ink/70 mt-1">
+                                                        {spot.subtitle}
+                                                    </p>
+                                                )}
+                                            </div>
                                         );
                                     })}
                                 </div>
                             </div>
                         )}
-
-                        {/* Action Buttons */}
-                        <div className="grid grid-cols-2 gap-3 mb-8">
-                            <button
-                                onClick={handleOpenMap}
-                                className="col-span-1 flex items-center justify-center gap-2 bg-kyoto-ink text-white py-3.5 rounded-xl font-bold active:scale-95 transition-transform shadow-lg shadow-kyoto-ink/20"
-                            >
-                                <Navigation className="w-4 h-4" />
-                                <span>導航</span>
-                            </button>
-
-                            {content.link ? (
-                                <button
-                                    onClick={handleOpenLink}
-                                    className="col-span-1 flex items-center justify-center gap-2 bg-white border border-kyoto-wood/20 text-kyoto-ink py-3.5 rounded-xl font-bold active:scale-95 transition-all shadow-sm"
-                                >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span>官網/資訊</span>
-                                </button>
-                            ) : (
-                                <div className="col-span-1 flex items-center justify-center gap-2 bg-kyoto-mist/10 text-kyoto-mist py-3.5 rounded-xl font-bold cursor-not-allowed border border-transparent">
-                                    <Info className="w-4 h-4" />
-                                    <span>無連結</span>
-                                </div>
-                            )}
-                        </div>
 
                         {/* Taxi / Address Card */}
                         {(content.jpName || content.address) && (
@@ -471,8 +410,10 @@ const ItineraryView: React.FC = () => {
                     {/* Background Image */}
                     <div className="absolute inset-0 bg-gray-200">
                         <img
-                            src={activeDay.imageUrl}
+                            src={optimizeImageUrl(activeDay.imageUrl)}
                             alt={activeDay.title}
+                            decoding="async"
+                            fetchPriority="high"
                             className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-kyoto-ink/40 backdrop-blur-[1px]"></div>
