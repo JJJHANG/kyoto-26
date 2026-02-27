@@ -318,7 +318,7 @@ const ActivityBottomSheet: React.FC<{
                                 <Star className="w-2.5 h-2.5" />
                             </div>
                             <p className="text-[10px] font-serif tracking-[0.2em] text-kyoto-wood">
-                                JAPAN TRAVEL 2025
+                                聰明小鼠旅行社 2026
                             </p>
                         </div>
                     </div>
