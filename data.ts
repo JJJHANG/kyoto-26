@@ -396,7 +396,7 @@ export const ITINERARY: DailyPlan[] = [
     {
         date: "3/13",
         day: "Day 9",
-        title: "都會購物與夜景",
+        title: "巴士旅遊",
         location: "伊根舟屋 > 天橋立",
         imageUrl:
             "https://commons.wikimedia.org/wiki/Special:FilePath/Amanohashidate%20view%20from%20Mt%20Moju01s3s4200.jpg",
