@@ -268,6 +268,13 @@ export const ITINERARY: DailyPlan[] = [
             "https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_Castle_02bs3200.jpg",
         activities: [
             {
+                time: "00:00",
+                title: "李豬豬生日",
+                type: "info",
+                description: "慶祝邁入 33 歲的豬豬",
+                guideNotes: "🎂🎉",
+            },
+            {
                 time: "09:00",
                 title: "前往大阪",
                 type: "transport",
@@ -288,8 +295,6 @@ export const ITINERARY: DailyPlan[] = [
                 description: "大阪城天守閣",
                 guideNotes:
                     "參觀大阪城公園，欣賞壯麗的天守閣外觀。這裡是大阪的地標，也是歷史的見證。",
-                address: "〒540-0002 大阪府大阪市中央区大阪城1−1",
-                jpName: "大阪城",
                 tags: ["歷史地標"],
             },
             {
@@ -299,8 +304,6 @@ export const ITINERARY: DailyPlan[] = [
                 description: "購物與美食天堂",
                 guideNotes:
                     "晚上在心齋橋筋購物，並在道頓堀與固力果跑跑人合照，享用大阪燒或章魚燒。",
-                address: "〒542-0071 大阪府大阪市中央区道頓堀",
-                jpName: "道頓堀",
                 tags: ["美食", "購物"],
             },
         ],
@@ -320,10 +323,8 @@ export const ITINERARY: DailyPlan[] = [
                 description: "世界最大級水族館",
                 guideNotes:
                     "建議開門就進場以避開人潮。觀察巨大的鯨鯊與各式海洋生物，體驗壯闊的深海世界。",
-                address: "〒552-0022 大阪府大阪市港区海岸通1丁目1−10",
-                jpName: "海遊館",
                 link: "https://www.kaiyukan.com/",
-                tags: ["親子推薦", "室內景點"],
+                tags: ["室內景點"],
             },
             {
                 time: "14:00",
@@ -334,13 +335,18 @@ export const ITINERARY: DailyPlan[] = [
                     "在 Marketplace 享用午餐，這裡有許多特色小店與美食街，還有復古風格的「浪花美食小巷」。",
             },
             {
+                time: "15:00",
+                title: "大阪文化館",
+                type: "sightseeing",
+                description: "清水模設計",
+                guideNotes: "紀念三得利創業90週年，委託安藤忠雄所設計。",
+            },
+            {
                 time: "16:00",
                 title: "天保山大摩天輪",
                 type: "sightseeing",
                 description: "俯瞰大阪港",
                 guideNotes: "搭乘摩天輪，欣賞大阪港及周邊城市的壯麗景色。",
-                address: "〒552-0022 大阪府大阪市港区海岸通1丁目1−10",
-                jpName: "天保山大観覧車",
                 tags: ["景觀"],
             },
         ],
@@ -358,13 +364,15 @@ export const ITINERARY: DailyPlan[] = [
                 title: "前往奈良",
                 type: "transport",
                 description: "大阪 → 奈良",
-                guideNotes: "搭乘近鐵特急或快急前往奈良，車程約 40 分鐘。",
+                guideNotes: "搭乘近鐵特急或快急前往奈良，車程約 50 分鐘。",
             },
             {
                 time: "10:30",
                 title: "奈良公園與東大寺",
                 type: "sightseeing",
-                description: "與鹿共舞，參觀完東大寺後前往若草山步道",
+                description: "與鹿共舞",
+                guideNotes:
+                    "參觀完東大寺後前往若草山步道，步道單程約 30 分鐘。",
                 tags: ["世界遺產", "動物互動"],
             },
             {
@@ -382,8 +390,6 @@ export const ITINERARY: DailyPlan[] = [
                 type: "sightseeing",
                 description: "五重塔",
                 guideNotes: "參觀興福寺，欣賞壯觀的五重塔，隨後返回大阪。",
-                address: "〒630-8213 奈良県奈良市登大路町48",
-                jpName: "興福寺",
             },
         ],
     },
@@ -391,38 +397,25 @@ export const ITINERARY: DailyPlan[] = [
         date: "3/13",
         day: "Day 9",
         title: "都會購物與夜景",
-        location: "黑門市場 > 阿倍野",
+        location: "伊根舟屋 > 天橋立",
         imageUrl:
-            "https://commons.wikimedia.org/wiki/Special:FilePath/Dotonbori_at_night.JPG",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Amanohashidate%20view%20from%20Mt%20Moju01s3s4200.jpg",
         activities: [
             {
-                time: "10:00",
-                title: "黑門市場 / 日本橋",
-                type: "food",
-                description: "大阪的廚房與動漫街",
-                guideNotes:
-                    "早晨在黑門市場品嚐新鮮海鮮，隨後逛逛日本橋的動漫與電器店。",
-                address: "〒542-0073 大阪府大阪市中央区日本橋2丁目4−1",
-                jpName: "黑門市場",
+                time: "07:00",
+                title: "抵達集合地點",
+                type: "info",
+                description: "蟹道樂道頓堀東店",
+                guideNotes: "搭乘至近鐵「日本橋站」後步行 2 分鐘",
                 tags: ["美食", "購物"],
             },
             {
-                time: "15:00",
-                title: "阿倍野 Harukas",
+                time: "07:15",
+                title: "天橋立一日遊",
                 type: "sightseeing",
-                description: "日本第一高樓購物",
-                guideNotes: "在近鐵百貨購物，準備最後的伴手禮。",
-            },
-            {
-                time: "17:30",
-                title: "阿倍野展望台",
-                type: "sightseeing",
-                description: "HARUKAS 300",
-                guideNotes:
-                    "登上展望台看日落與大阪百萬夜景，為旅程畫下完美句點。",
-                address: "〒545-6016 大阪府大阪市阿倍野区阿倍野筋1丁目1−43",
-                jpName: "あべのハルカス300",
-                tags: ["夜景", "景觀"],
+                description: "伊根舟屋遊船、天橋立、美山茅屋之里",
+                guideNotes: "參加 KKDAY 的一日行程",
+                tags: ["已提前付款"],
             },
         ],
     },
@@ -453,11 +446,11 @@ export const ITINERARY: DailyPlan[] = [
                 time: "14:30",
                 title: "返程飛行",
                 type: "transport",
-                description: "大阪 KIX ➔ 台北 TPE",
+                description: "大阪 關西機場 → 台北",
                 guideNotes:
                     "搭乘 14:30 起飛的航班，帶著滿滿的回憶回家。期待下次的日本之旅！",
                 bookingInfo: [
-                    { label: "起飛時間", value: "14:30" },
+                    { label: "航班", value: "CI153" },
                     { label: "航廈", value: "T1" },
                 ],
             },
