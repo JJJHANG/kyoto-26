@@ -104,45 +104,34 @@ export const ITINERARY: DailyPlan[] = [
     {
         date: "3/6",
         day: "Day 2",
-        title: "和服體驗與洛東",
-        location: "清水寺 > 祇園",
+        title: "洛北與伏見",
+        location: "金閣寺 > 伏見稻荷",
         imageUrl:
-            "https://commons.wikimedia.org/wiki/Special:FilePath/Kiyomizu.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
         activities: [
             {
-                time: "07:00",
-                title: "和服體驗",
-                type: "info",
-                description: "身穿和服準備走到鐵腿",
-                guideNotes:
-                    "目前首選未來颯和服，位於八坂神社附近。可以從飯店搭乘公車抵達。",
-                tags: ["需預約"],
-            },
-            {
                 time: "08:00",
-                title: "洛東名勝巡禮",
+                title: "洛北名剎",
                 type: "sightseeing",
-                description:
-                    "清水寺、二年坂、石坪小路、高台寺、八坂塔、八坂神社",
-                guideNotes:
-                    "從八坂神社開始，經過石坪小路、高台寺與八坂塔，沿著產寧坂（三年坂）、二年坂漫步走到清水寺。",
+                description: "金閣寺、仁和寺、北野天滿宮",
                 tags: ["世界遺產"],
             },
             {
-                time: "14:30",
-                title: "祇園風情",
-                type: "sightseeing",
-                description: "祇園白川、花見小路、建仁寺",
-                guideNotes: "下午漫步於祇園區域，結束之後歸還和服。",
-                tags: ["拍照聖地"],
+                time: "13:20",
+                title: "京都站",
+                type: "info",
+                description: "交通樞紐與購物",
+                guideNotes:
+                    "回到京都車站，可以在此享用午餐，或在伊勢丹百貨、地下街進行購物。",
             },
             {
                 time: "16:30",
-                title: "福壽園買茶葉",
-                type: "food",
-                description: "京都老牌茶舖",
-                guideNotes: "挑選京都茶葉作為伴手禮。",
-                link: "https://www.fukujuen.com/",
+                title: "伏見稻荷大社",
+                type: "sightseeing",
+                description: "千本鳥居",
+                guideNotes:
+                    "傍晚前往伏見稻荷大社，穿梭在壯觀的千本鳥居之間，感受神祕的氛圍。",
+                tags: ["必訪"],
             },
         ],
     },
@@ -194,34 +183,45 @@ export const ITINERARY: DailyPlan[] = [
     {
         date: "3/8",
         day: "Day 4",
-        title: "洛北與伏見",
-        location: "金閣寺 > 伏見稻荷",
+        title: "和服體驗與洛東",
+        location: "清水寺 > 祇園",
         imageUrl:
-            "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Kiyomizu.jpg",
         activities: [
             {
+                time: "07:00",
+                title: "和服體驗",
+                type: "info",
+                description: "身穿和服準備走到鐵腿",
+                guideNotes:
+                    "目前首選未來颯和服，位於八坂神社附近。可以從飯店搭乘公車抵達。",
+                tags: ["需預約"],
+            },
+            {
                 time: "08:00",
-                title: "洛北名剎",
+                title: "洛東名勝巡禮",
                 type: "sightseeing",
-                description: "金閣寺、仁和寺、北野天滿宮",
+                description:
+                    "清水寺、二年坂、石坪小路、高台寺、八坂塔、八坂神社",
+                guideNotes:
+                    "從八坂神社開始，經過石坪小路、高台寺與八坂塔，沿著產寧坂（三年坂）、二年坂漫步走到清水寺。",
                 tags: ["世界遺產"],
             },
             {
-                time: "13:20",
-                title: "京都站",
-                type: "info",
-                description: "交通樞紐與購物",
-                guideNotes:
-                    "回到京都車站，可以在此享用午餐，或在伊勢丹百貨、地下街進行購物。",
+                time: "14:30",
+                title: "祇園風情",
+                type: "sightseeing",
+                description: "祇園白川、花見小路、建仁寺",
+                guideNotes: "下午漫步於祇園區域，結束之後歸還和服。",
+                tags: ["拍照聖地"],
             },
             {
                 time: "16:30",
-                title: "伏見稻荷大社",
-                type: "sightseeing",
-                description: "千本鳥居",
-                guideNotes:
-                    "傍晚前往伏見稻荷大社，穿梭在壯觀的千本鳥居之間，感受神祕的氛圍。",
-                tags: ["必訪"],
+                title: "福壽園買茶葉",
+                type: "food",
+                description: "京都老牌茶舖",
+                guideNotes: "挑選京都茶葉作為伴手禮。",
+                link: "https://www.fukujuen.com/",
             },
         ],
     },
