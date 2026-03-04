@@ -133,6 +133,14 @@ export const ITINERARY: DailyPlan[] = [
                     "傍晚前往伏見稻荷大社，穿梭在壯觀的千本鳥居之間，感受神祕的氛圍。",
                 tags: ["必訪"],
             },
+            {
+                time: "24:00",
+                title: "備案",
+                type: "sightseeing",
+                description: "城南宮梅花、淀水路櫻花",
+                guideNotes: "",
+                tags: ["賞花"],
+            },
         ],
     },
     {
